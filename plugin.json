@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "instploy",
+  "version": "1.0.0",
+  "description": "Connect ChatGPT and Codex to InstPloy MCP for Odoo deploy, upgrade, and workspace tools.",
+  "author": {
+    "name": "Rightechs Solutions",
+    "url": "https://www.rightechs.net/"
+  },
+  "homepage": "https://www.rightechs.net/",
+  "license": "MIT",
+  "keywords": ["instploy", "odoo", "mcp", "deployment", "chatgpt"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "InstPloy",
+        "shortDescription": "InstPloy MCP for Odoo deploy and workspace tools",
+        "longDescription": "Connect ChatGPT to your InstPloy instance over MCP. Enable Developer mode, register your MCP URL and Bearer token, then install this plugin.",
+        "developerName": "Rightechs Solutions",
+        "category": "Developer Tools",
+        "capabilities": ["Read", "Write"],
+        "websiteURL": "https://www.rightechs.net/",
+        "defaultPrompt": [
+          "Connect InstPloy MCP with my instance URL and token.",
+          "Check InstPloy Odoo status on my instance.",
+          "Install or upgrade an Odoo addon through InstPloy."
+        ]
+      }
+    }
+  }
+}

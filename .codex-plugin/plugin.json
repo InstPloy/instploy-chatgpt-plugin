@@ -1,0 +1,13 @@
+{
+  "name": "instploy",
+  "version": "1.0.0",
+  "description": "Connect ChatGPT and Codex to InstPloy MCP for Odoo deploy, upgrade, and workspace tools.",
+  "author": {
+    "name": "Rightechs Solutions",
+    "url": "https://www.rightechs.net/"
+  },
+  "homepage": "https://www.rightechs.net/",
+  "license": "MIT",
+  "keywords": ["instploy", "odoo", "mcp", "deployment", "chatgpt"],
+  "skills": "./skills/"
+}
