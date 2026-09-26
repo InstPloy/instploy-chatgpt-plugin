@@ -1,10 +1,38 @@
 # InstPloy ChatGPT Plugin
 
-ChatGPT / Codex-only Agent Plugin that connects to InstPloy MCP.
+ChatGPT / Codex marketplace that ships the InstPloy Agent Plugin.
 
-> Cursor users: use the separate package `instploy-cursor-plugin`.
+> Cursor users: use https://github.com/InstPloy/instploy-cursor-plugin
 
-## Your InstPloy JSON
+## Repo layout
+
+```text
+.
+├── .agents/plugins/marketplace.json   # required marketplace manifest
+└── plugins/instploy/                  # the InstPloy plugin
+    ├── plugin.json
+    ├── .codex-plugin/plugin.json
+    └── skills/instploy-mcp/SKILL.md
+```
+
+## Install marketplace from GitHub
+
+```bash
+codex plugin marketplace add InstPloy/instploy-chatgpt-plugin
+```
+
+Or with SSH:
+
+```bash
+codex plugin marketplace add git@github.com:InstPloy/instploy-chatgpt-plugin.git
+```
+
+Then open ChatGPT / Codex Plugins, pick the **InstPloy** marketplace, and install **instploy**.
+
+## Connect InstPloy MCP
+
+1. Enable **Developer mode**: Settings → Security and login → Developer mode
+2. Plugins → **+** → register your MCP URL + Bearer token:
 
 ```json
 "instploy": {
@@ -15,44 +43,7 @@ ChatGPT / Codex-only Agent Plugin that connects to InstPloy MCP.
 }
 ```
 
-## Install on ChatGPT
-
-1. Enable **Developer mode**: Settings → Security and login → Developer mode
-2. Register the MCP server: Plugins → **+** → paste InstPloy URL + Bearer token
-3. Install this plugin from a personal marketplace:
-
-```bash
-mkdir -p ~/.codex/plugins ~/.agents/plugins
-cp -R /path/to/instploy-chatgpt-plugin ~/.codex/plugins/instploy
-ln -sfn ~/.codex/plugins/instploy ~/.agents/plugins/instploy
-```
-
-Create `~/.agents/plugins/marketplace.json`:
-
-```json
-{
-  "name": "local-instploy",
-  "interface": {
-    "displayName": "Local InstPloy"
-  },
-  "plugins": [
-    {
-      "name": "instploy",
-      "source": {
-        "source": "local",
-        "path": "./instploy"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Developer Tools"
-    }
-  ]
-}
-```
-
-4. Restart ChatGPT desktop (or refresh Plugins), install **InstPloy**, open a **new chat**
+3. Start a **new chat** after installing the plugin
 
 ## Security
 

@@ -1,0 +1,20 @@
+{
+  "name": "instploy-chatgpt-plugin",
+  "interface": {
+    "displayName": "InstPloy"
+  },
+  "plugins": [
+    {
+      "name": "instploy",
+      "source": {
+        "source": "local",
+        "path": "./plugins/instploy"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

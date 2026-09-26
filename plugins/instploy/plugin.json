@@ -7,7 +7,8 @@
     "name": "Rightechs Solutions",
     "url": "https://www.rightechs.net/"
   },
-  "homepage": "https://www.rightechs.net/",
+  "homepage": "https://github.com/InstPloy/instploy-chatgpt-plugin",
+  "repository": "https://github.com/InstPloy/instploy-chatgpt-plugin",
   "license": "MIT",
   "keywords": ["instploy", "odoo", "mcp", "deployment", "chatgpt"],
   "extensions": {
